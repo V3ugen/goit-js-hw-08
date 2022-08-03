@@ -2,6 +2,7 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 250ms;
 }
+@import 'simplelightbox/dist/simple-lightbox.min.css';
 
 .gallery {
   display: grid;

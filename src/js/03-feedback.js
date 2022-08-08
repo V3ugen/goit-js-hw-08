@@ -17,6 +17,8 @@ refs.form.addEventListener('input', throttle(onTextareaInput, 500));
 refs.form.addEventListener('submit', e => {
   e.preventDefault();
   e.currentTarget.reset();
+  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+  
   const objData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   localStorage.removeItem(STORAGE_KEY);
 });
@@ -31,9 +33,11 @@ function populateTextarea() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
   if (savedMessage === null) {
-    //console.log(savedMessage);
+    // console.log(savedMessage);
     return;
   }
+
+  
   refs.textarea.value = savedMessage['message'] || '';
   refs.input.value = savedMessage['email'] || '';
 }
